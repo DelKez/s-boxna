@@ -12,8 +12,8 @@ client.on("message", function (message) {
     msg = message.content
 
     ListeDeMot = msg.split(" ")
-    ListeDeMot = msg.split(",")
-    if(InsultScroll(ins,ListeDeMot) == true){
+
+    if (InsultScroll(ins,ListeDeMot) == true){
         message.delete()
     }
 })
@@ -21,12 +21,12 @@ client.on("message", function (message) {
 function InsultScroll(ListeInsulte,ListeMot){
     i = 0
     while (i < ListeMot.length){
-        a = 0
-        while (a < ListeInsulte.length){
-            if(ListeMot[i] == ListeInsulte[a]){
+        j = 0
+        while (j < ListeInsulte.length){
+            if (ListeMot[i] == ListeInsulte[j]){
                 return true
             }
-            a = a+1
+            j = j+1
         }
         i = i+1
     }
